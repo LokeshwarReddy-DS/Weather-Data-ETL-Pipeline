@@ -1,26 +1,39 @@
-# ETL Pipeline: Weather Data
+# Weather Data ETL Pipeline
 
-## Overview
-This project demonstrates a complete ETL (Extract, Transform, Load) pipeline for weather data using Python, PostgreSQL, and Docker.
+A concise, end-to-end pipeline that ingests, cleans, and stores hourly weather observations for analysis and visualization. This repository focuses on reproducibility and clear documentation to make the project easy to run and share.
 
-### Features
-- Extract weather data from OpenWeatherMap API
-- Transform data using Pandas
-- Load data into PostgreSQL database
-- Containerized with Docker Compose
+Overview
+- Purpose: demonstrate a complete ETL workflow for time-series weather data using Python, Docker, and CI.
+- Components: data fetcher, basic cleaning/transformation, local storage (CSV/parquet), and a simple plotter for quick inspection.
 
-### Tech Stack
-- Python
-- PostgreSQL
-- Docker
-- Pandas
+Quick start (local)
+1. Clone:
+   git clone https://github.com/LokeshwarReddy-DS/Weather-Data-ETL-Pipeline
+   cd Weather-Data-ETL-Pipeline
+2. Create virtual environment and install:
+   python -m venv .venv && source .venv/bin/activate
+   pip install -r requirements.txt
+3. Run demo:
+   python examples/run_demo.py --lat 40.71 --lon -74.01 --start 2025-01-01 --end 2025-01-02
 
-### How to Run
-1. Clone the repository
-2. Navigate to `weather-data-etl-pipeline` folder
-3. Run `docker-compose up`
-4. Execute `main.py` to start the ETL process
+Run with Docker Compose
+- docker-compose up --build
 
-### Architecture
-![Architecture Diagram](diagrams/architecture.png)
+Project structure
+- src/           # core ETL modules (keep code modular and importable)
+- examples/      # runnable example script and generated outputs
+- tests/         # pytest tests
+- diagrams/      # optional architecture diagrams (add images)
+- docker-compose.yml
+- requirements.txt
 
+Development
+- Test: pytest
+- Lint: ruff
+- Prefer type hints on public functions
+
+License
+- MIT
+
+Contact
+- Lokeshwar Reddy — GitHub: @LokeshwarReddy-DS
