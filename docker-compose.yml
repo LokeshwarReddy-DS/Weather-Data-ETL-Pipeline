@@ -1,10 +1,7 @@
-version: '3.8'
+version: "3.8"
 services:
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_USER: etl_user
-      POSTGRES_PASSWORD: etl_pass
-      POSTGRES_DB: weather_db
-    ports:
-      - "5432:5432"
+  pipeline:
+    build: .
+    volumes:
+      - ./:/app
+    command: ["python", "examples/run_demo.py", "--lat", "40.71", "--lon", "-74.01", "--start", "2025-01-01", "--end", "2025-01-02"]
