@@ -37,3 +37,6 @@ License
 
 Contact
 - Lokeshwar Reddy — GitHub: @LokeshwarReddy-DS
+
+# Architecture
+![Architecture Diagram](diagrams/architecture.png)
